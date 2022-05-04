@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // Higher order function
+        function doExecute(a,b,c){  
+            if(typeof a=="function"){
+                a(b,c)
+            }
+        }
+
+        //lower order function
+        function add(x,y){
+            alert(x+y)
+        }
+
+        //lower order function
+        function subtract(x,y){
+            alert(x-y)
+        }
+
+        //lower order function
+        function multiply(x,y){
+            alert(x*y)
+        }
+    </script>
+</head>
+<body>
+    <script>
+        doExecute(add,100,200)
+        doExecute(subtract,3,2)
+        doExecute(multiply,40,50)
+    </script>
+</body>
+</html>

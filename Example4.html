@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var name, grade, basicSalary, s;
+        name = window.prompt("Enter name");
+
+        grade = window.prompt("Enter the grade A/B/C");
+
+        basicSalary = window.prompt("enter the basic salary");
+        s = window.parseInt(basicSalary);
+        if (window.isNaN(s))
+            alert("Please enter valid salary")
+
+        if (grade == "A") {
+            allowance = (basicSalary * 35) / 100;
+            window.alert("name=" + name + " grade=" + grade + " basicSalary=" + basicSalary + " allowance=" + allowance);
+        }
+
+        if (grade == "B") {
+            allowance = (basicSalary * 25) / 100;
+            window.alert("name=" + name + " grade=" + grade + " basicSalary=" + basicSalary + " allowance=" + allowance);
+        }
+
+        if (grade == "C") {
+            allowance = (basicSalary * 10) / 100;
+            window.alert("name=" + name + " grade=" + grade + " basicSalary=" + basicSalary + " allowance=" + allowance);
+        }
+
+
+    </script>
+</body>
+
+</html>

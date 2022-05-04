@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function doSomthing(a,b){
+            console.log(a+b);
+
+            function doThathing(c){
+                console.log(a-b-c)
+            }
+            return doThathing;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var o=doSomthing(10,5);
+        o(3);
+
+        var o1=doSomthing(0,0);
+        o1(8);
+
+        var o2=doSomthing(8,8);
+        o2(10);
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        /* function doSum() {
+             var num1 = window.document.forms[0].elements[0].value;
+             var a = window.parseInt(num1)
+             var num2 = window.document.forms[0].elements[1].value;
+             var b = window.parseInt(num2);
+             sum = a + b
+             document.write(sum)
+         }*/
+
+        function doResult() {
+            var a = document.inpForm.inp1.value;
+            var b = document.inpForm.inp2.value;
+            var n1 = parseInt(a)
+            var n2 = parseInt(b)
+            document.outForm.out1.value = n1 + n2;
+            document.outForm.out2.value = n1 - n2;
+            document.outForm.out3.value = n1 * n2;
+            document.outForm.out4.value = n1 / n2;
+
+        }
+    </script>
+</head>
+
+<body>
+    <form name="inpForm">
+        <table>
+            <tr>
+                <td><label for="">Number 1</label></td>
+                <td><input type="text" name="inp1" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Number 2</label></td>
+                <td><input type="text" name="inp2" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Show Result" onclick="doResult()" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <form name="outForm">
+        <table>
+            <tr>
+                <td>Sum</td>
+                <td><input name="out1"></td>
+            </tr>
+            <tr>
+                <td>Subtract</td>
+                <td><input name="out2"></td>
+            </tr>
+            <tr>
+                <td>Multiply</td>
+                <td><input name="out3"></td>
+            </tr>
+            <tr>
+                <td>Division</td>
+                <td><input name="out4"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

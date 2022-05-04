@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Student(a, b, c, d, e) {
+            this.rollNo = a;
+            this.name = b;
+            this.m1 = c;
+            this.m2 = d;
+            this.m3 = e;
+
+            this.computeTotal = function () {
+                return this.m1 + this.m2 + this.m3;
+            }
+            this.computeAvg = function () {
+                return (this.m1 + this.m2 + this.m3) / 3;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        var s1 = new Student(100, "kavya", 80, 90, 99);
+        console.log(s1.rollNo)
+        console.log(s1.name)
+        console.log(s1.m1)
+        console.log(s1.m2)
+        console.log(s1.m3)
+        console.log(s1.computeTotal())
+        console.log(s1.computeAvg())
+    </script>
+</body>
+
+</html>

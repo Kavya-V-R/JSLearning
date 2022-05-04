@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Student.js"></script>
+
+    <script>
+        function doController() {
+            var rollNoInp = document.stuInpForm.rollNOInput.value;  //reading the input from ui
+            var nameInp = document.stuInpForm.nameInput.value;
+            var m1Inp = document.stuInpForm.m1Input.value;
+            var m2Inp = document.stuInpForm.m2Input.value;
+            var m3Inp = document.stuInpForm.m3Input.value;
+
+
+            var rollNo = window.parseInt(rollNoInp)              // converting to numbers
+            var m1= window.parseInt(m1Inp)
+            var m2= window.parseInt(m2Inp)
+            var m3= window.parseInt(m3Inp)
+
+
+            var stu= new Student(rollNo, nameInp, m1, m2,m3)  // constructor call and object creation
+
+            document.getElementById("totaloutput").innerText = stu.computeTotal(); // showing output
+            document.getElementById("avgoutput").innerText = stu.computeAvg();
+            document.getElementById("gradeoutput").innerText = stu.computeGrade();
+        }   
+    </script>
+</head>
+
+<body>
+    <form name="stuInpForm">
+        <table>
+            <tr>
+                <td><label for="">Student Id</label></td>
+                <td><input name="rollNOInput"></td>
+            </tr>
+            <tr>
+                <td><label for="">Name</label></td>
+                <td><input name="nameInput"></td>
+            </tr>
+            <tr>
+                <td><label for="">mark1</label></td>
+                <td><input name="m1Input"></td>
+            </tr>
+            <tr>
+                <td><label for="">Mark2</label></td>
+                <td><input name="m2Input"></td>
+            </tr>
+
+            <tr>
+                <td><label for="">Mark3</label></td>
+                <td><input name="m3Input"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Calculate" onclick="doController()">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <form>
+        <table>
+            <tr>
+                <td>Total marks</td>
+                <td id="totaloutput"></td>
+            </tr>
+            <tr>
+                <td>Avg Marks</td>
+                <td id="avgoutput"></td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td id="gradeoutput"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

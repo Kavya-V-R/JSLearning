@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Employee.js"></script>
+
+    <script>
+        function doController() {
+            var idInp = document.empInpForm.idInput.value;  //reading the input from ui
+            var nameInp = document.empInpForm.nameInput.value;
+            var gradeInp = document.empInpForm.gradeInput.value;
+            var basicInp = document.empInpForm.basicInput.value;
+
+            var id = window.parseInt(idInp)              // converting to numbers
+            var basic = window.parseFloat(basicInp)
+
+            var emp = new Employee(id, nameInp, gradeInp, basic)  // constructor call and object creation
+
+            document.getElementById("allowanceoutput").innerText = emp.computeAllowance(); // showing output
+            document.getElementById("taxoutput").innerText = emp.computeTax();
+            document.getElementById("netSalaryoutput").innerText = emp.computeNetSalary();
+        }   
+    </script>
+</head>
+
+<body>
+    <form name="empInpForm">
+        <table>
+            <tr>
+                <td><label for="">EmpId</label></td>
+                <td><input name="idInput"></td>
+            </tr>
+            <tr>
+                <td><label for="">Name</label></td>
+                <td><input name="nameInput"></td>
+            </tr>
+            <tr>
+                <td><label for="">Grade</label></td>
+                <td><input name="gradeInput"></td>
+            </tr>
+            <tr>
+                <td><label for="">basicSalary</label></td>
+                <td><input name="basicInput"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="Calculate" onclick="doController()">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <form>
+        <table>
+            <tr>
+                <td>Allowance</td>
+                <td id="allowanceoutput"></td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td id="taxoutput"></td>
+            </tr>
+            <tr>
+                <td>Net Salary</td>
+                <td id="netSalaryoutput"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
